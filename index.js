@@ -9,7 +9,7 @@ import mongoose from "mongoose";
 
 
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
 const UPLOADS_DIR = path.join(process.cwd(), "uploads");
 
 await fs.ensureDir(UPLOADS_DIR);
@@ -45,7 +45,7 @@ app.use(express.json({ limit: "10mb" }));
 app.use("/uploads", express.static(UPLOADS_DIR));
 
 app.get("/", (req, res) => {
-  res.send("CitySense API is running");
+  res.send("FixMyRoad API is running");
 });
 
 const storage = multer.diskStorage({

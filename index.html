@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Fix My Road</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="favicon.ico" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <img src="logo.svg" alt="" class="logo" />
+      <span>Fix My Road</span>
+    </div>
+    <button id="menuBtn" class="icon-btn" aria-label="menu" type="button">☰</button>
+  </header>
+
+  <main>
+    <section class="hero card">
+      <div class="hero-art" aria-hidden="true">
+        <div class="road"><div class="center-line"></div></div>
+      </div>
+      <h1>Fix My Road</h1>
+      <p class="sub">Use a demo image or upload a road video for pothole detection.<br/>
+        We’ll generate a clear report with hotspots & severity.</p>
+
+      <div class="cta-row">
+        <!-- DEMO: label opens file picker directly -->
+        <label class="cta blue" for="filePicker" id="btnDemoLabel">
+          <span>📷 Demo</span>
+          <small>Upload image/video</small>
+        </label>
+
+        <!-- LIVE: stays a normal button -->
+        <button class="cta orange" id="btnLive" type="button">
+          <span>🎥 Live Detection</span>
+          <small>Start live</small>
+        </button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h3>No Report Yet</h3>
+      <p>Start Live Detection to generate an AI report.</p>
+      <div id="reportStatus" class="muted"></div>
+    </section>
+
+    <section class="card">
+      <h2>How to Use</h2>
+      <ol class="steps">
+        <li><b>Start:</b> Tap <i>Start Live Detection</i> and grant camera & location.</li>
+        <li><b>Mount:</b> Mount your phone securely on your car’s dashboard.</li>
+        <li><b>Drive:</b> The app detects potholes in real-time.</li>
+        <li><b>Review:</b> We generate reports automatically.</li>
+      </ol>
+    </section>
+
+    <section class="card">
+      <h2>Stay Connected</h2>
+      <div class="chips">
+        <a class="chip" href="#" target="_blank">fixmyroad.org</a>
+        <a class="chip" href="#" target="_blank">@fixmyroad</a>
+        <a class="chip" href="#" target="_blank">facebook.com/fixmyroad</a>
+        <button class="chip" id="shareBtn" type="button">Share with community</button>
+      </div>
+
+      <div class="contact">
+        <p><b>Contact</b><br/>
+        Email: <a href="mailto:support@fixmyroad.org">support@fixmyroad.org</a> ·
+        Phone: +91 98765 43210</p>
+      </div>
+    </section>
+  </main>
+
+  <button id="feedbackFab" class="fab" type="button">Feedback</button>
+
+  <dialog id="feedbackDlg" class="modal">
+    <form method="dialog" class="modal-card" id="feedbackForm">
+      <h3>Send Feedback</h3>
+      <label class="field">
+        <span>Name</span>
+        <input type="text" name="name" placeholder="Your name" />
+      </label>
+      <label class="field">
+        <span>Email</span>
+        <input type="email" name="email" placeholder="you@example.com" />
+      </label>
+      <label class="field">
+        <span>Message</span>
+        <textarea name="message" rows="4" required placeholder="Tell us what you think…"></textarea>
+      </label>
+      <menu class="modal-actions">
+        <button value="cancel" type="reset">Cancel</button>
+        <button value="submit" class="primary" id="sendFeedbackBtn">Send</button>
+      </menu>
+    </form>
+  </dialog>
+
+  <!-- File input: kept off-screen (not display:none) so label can trigger it -->
+  <input
+    type="file"
+    id="filePicker"
+    accept="image/,video/"
+    aria-hidden="true"
+    tabindex="-1"
+    data-hidden
+  />
+
+  <script src="app.js"></script>
+</body>
+</html>
