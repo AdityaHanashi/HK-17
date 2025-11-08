@@ -342,12 +342,7 @@ class _HomeState extends State<_Home> with TickerProviderStateMixin {
                       style: TextStyle(fontSize: 34, fontWeight: FontWeight.w900, letterSpacing: 0.2),
                     ),
                   ),
-                  const SizedBox(height: 8),
-                  Text(
-                    '• Pothole detection.\n'
-                    '• Upload a road video for an instant AI report.',
-                    style: TextStyle(fontSize: 14.5, color: cs.onSurface),
-                  ),
+                  
                   const SizedBox(height: 14),
                   SizedBox(
                     height: isNarrow ? 170 : 210,
