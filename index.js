@@ -102,7 +102,7 @@ app.get("/reports", async (req, res) => {
   }
 });
 
-app.get("/reports/:id", async (req, res) => {-
+app.get("/reports/:id", async (req, res) => {
   const r = await Report.findOne({ id: req.params.id }).lean();
   if (!r) return res.status(404).json({ error: "not_found" });
   res.json({ ok: true, report: r });
